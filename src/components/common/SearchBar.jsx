@@ -17,13 +17,12 @@ const SearchBar = () => {
     const searchValue = searchRef.current.value;
     const response = await openai.responses.create({
     // const response = await openai.chat.completions.create({
-      "model": "gpt-4o",
+      "model": "gpt-4o-mini",
       instructions: 'You are a movie recommendation system',
       input: [
         { role: 'developer',
       content: `search for movies with genre ${searchValue} and return 5 movie names in string seperated by commas like movie1,movie2,movie3 `}]
     });
-    console.log('resp',response);
     const moviesList = response.output_text.split(",").slice(1);
     const moviePromises = moviesList.map((movie)=>{
       return fetchMovie(movie);// returns a promise

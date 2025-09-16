@@ -6,7 +6,6 @@ import { useSelector } from 'react-redux'
 const VideoConatiner = () => {
   const nowPlayingMovies = useSelector((state) => state.movie.nowPlayingMovies);
   if(!nowPlayingMovies) return;
-  console.log('videocontainerrender')
   const movie = nowPlayingMovies?.[0];
 
   return (

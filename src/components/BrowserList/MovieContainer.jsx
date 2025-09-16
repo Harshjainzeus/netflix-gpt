@@ -5,7 +5,6 @@ import { useSelector } from 'react-redux'
 const MovieContainer = () => {
     const nowPlayingMovies = useSelector((state) => state.movie.nowPlayingMovies);
     if(!nowPlayingMovies) return;
-    console.log('moviecontainerrender')
   return (
     <div className='w-full bg-black pl-12'>
         <div className='w-full -mt-32 relative z-10 '>

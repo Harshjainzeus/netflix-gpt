@@ -16,7 +16,6 @@ const Header = () => {
   const navigate = useNavigate()
   const windowSize = useWindowSize()
   const language = useSelector((state) => state.app.language)
-  console.log('headerrender')
   const handleSignOut = () => {
     signOut(auth).then(() => {
       console.log("Sign-out successful.");
